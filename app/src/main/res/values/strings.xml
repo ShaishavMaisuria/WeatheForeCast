@@ -11,4 +11,5 @@
     <string name="StringWindDegree">Wind Degree</string>
     <string name="StringCloudlness">Cloudlness</string>
     <string name="APIKEY">2fdf85c5ae5e6f467181fae0ef5aa332</string>
+    <string name="StringCheckForcast">Check Forecast</string>
 </resources>

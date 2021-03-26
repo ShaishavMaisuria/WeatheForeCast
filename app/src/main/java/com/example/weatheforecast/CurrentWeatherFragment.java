@@ -1,9 +1,9 @@
 package com.example.weatheforecast;
 
-import android.app.DownloadManager;
-import android.os.AsyncTask;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -91,6 +91,16 @@ public class CurrentWeatherFragment extends Fragment {
         Log.d(TAG, "Citys"+mCityCountry);
                 getCurrentWeather();
         Log.d(TAG, "Done");
+
+
+        view.findViewById(R.id.buttonCheckForecast).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.currentWeatherToCheckWeather(mCityCountry);
+            }
+        });
+
+
         return view;
     }
     private final OkHttpClient client = new OkHttpClient();
@@ -161,6 +171,19 @@ public class CurrentWeatherFragment extends Fragment {
         });
 
     }
+    CurrentWeatherForecastListener mListener;
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof CurrentWeatherForecastListener){
+            mListener=(CurrentWeatherForecastListener) context;
+        } else{
+            throw new RuntimeException(context.toString() + "must implement CurrentWeatherForecastListener");
+        }
+    }
 
+    interface CurrentWeatherForecastListener {
+        void currentWeatherToCheckWeather(String city);
+    }
 
 }
