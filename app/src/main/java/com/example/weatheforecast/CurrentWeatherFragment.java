@@ -75,6 +75,7 @@ public class CurrentWeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        getActivity().setTitle("Current Weather");
         View view= inflater.inflate(R.layout.fragment_current_weather, container, false);
         cityTitle=view.findViewById(R.id.textViewCityCountryName);
         cityTitle.setText(mCityCountry);
@@ -146,14 +147,14 @@ public class CurrentWeatherFragment extends Fragment {
 
                                 Picasso.get().load(weather.icon).into(imageView);
 
-                                temperature.setText(String.valueOf(weather.temp));
-                                temperatureMax.setText(String.valueOf(weather.temp_max));
-                                temperatureMin.setText(String.valueOf(weather.temp_min));
+                                temperature.setText(String.valueOf(weather.temp)+getResources().getString(R.string.StringF));
+                                temperatureMax.setText(String.valueOf(weather.temp_max)+getResources().getString(R.string.StringF));
+                                temperatureMin.setText(String.valueOf(weather.temp_min) +getResources().getString(R.string.StringF));
                                 description.setText(String.valueOf(weather.description));
-                                humidity.setText(String.valueOf(weather.humidity));
-                                windSpeed.setText(String.valueOf(weather.speed));
-                                windDegree.setText(String.valueOf(weather.deg));
-                                cloudiness.setText(String.valueOf(weather.clouds));
+                                humidity.setText(String.valueOf(weather.humidity)+getResources().getString(R.string.StringPercentage));
+                                windSpeed.setText(String.valueOf(weather.speed)+getResources().getString(R.string.StringSpeed));
+                                windDegree.setText(String.valueOf(weather.deg)+getResources().getString(R.string.StringDegrees));
+                                cloudiness.setText(String.valueOf(weather.clouds)+getResources().getString(R.string.StringPercentage));
 
 
                             }

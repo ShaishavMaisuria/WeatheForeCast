@@ -2,7 +2,86 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".eachForeCast"
-    android:id="@+id/frameLayout4" />
+    android:layout_height="wrap_content"
+    android:background="@drawable/customborder"
+    android:padding="16dp"
+    android:layout_margin="16dp"
+    tools:context=".eachForeCast">
+
+    <TextView
+        android:id="@+id/textViewDateTime"
+        android:layout_width="0dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewIcon"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewDateTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewDateTime"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewWFTemp"
+        android:layout_width="69dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="@+id/textViewDateTime"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDateTime" />
+
+    <TextView
+        android:id="@+id/textViewWFTempMax"
+        android:layout_width="117dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toEndOf="@+id/textViewWFTemp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDateTime" />
+
+    <TextView
+        android:id="@+id/textViewWFTempMin"
+        android:layout_width="100dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewWFTempMax"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewWFTempMax" />
+
+    <TextView
+        android:id="@+id/textViewWTHumidity"
+        android:layout_width="205dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewWFTempMax"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewWFTemp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWFTemp" />
+
+    <TextView
+        android:id="@+id/textViewWFDescription"
+        android:layout_width="205dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewWTHumidity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

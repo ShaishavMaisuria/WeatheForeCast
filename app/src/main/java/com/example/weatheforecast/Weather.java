@@ -8,7 +8,20 @@ import org.json.JSONObject;
 
 public class Weather {
     double temp,temp_min,temp_max,humidity,speed,deg,clouds;
-    String description,icon;
+    String description,icon,time;
+
+    public Weather(double temp, double temp_min, double temp_max, double humidity, double speed, double deg, double clouds, String description, String icon, String time) {
+        this.temp = temp;
+        this.temp_min = temp_min;
+        this.temp_max = temp_max;
+        this.humidity = humidity;
+        this.speed = speed;
+        this.deg = deg;
+        this.clouds = clouds;
+        this.description = description;
+        this.icon = icon;
+        this.time = time;
+    }
 
     public Weather(String body) throws JSONException {
 
@@ -23,7 +36,7 @@ public class Weather {
         deg= rootObject.getJSONObject("wind").getDouble("deg");
 
         clouds = rootObject.getJSONObject("clouds").getDouble("all");
-
+        time="n/a";
         description= "N/A";
 
         if(rootObject.getJSONArray("weather").length() >0){

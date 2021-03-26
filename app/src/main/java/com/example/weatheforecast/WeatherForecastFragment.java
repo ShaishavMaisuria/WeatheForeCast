@@ -69,6 +69,7 @@ public class WeatherForecastFragment extends Fragment {
         Log.d(TAG,"Succesful in weatherForecast"+mCityCountry);
         title=view.findViewById(R.id.textViewcityCountryTitle);
         recyclerView= view.findViewById(R.id.recylerViewForecast);
+        getActivity().setTitle("Weather Forecast");
         recyclerView.setHasFixedSize(true);
         title.setText(mCityCountry);
         getCheckedCity();
@@ -110,15 +111,26 @@ public class WeatherForecastFragment extends Fragment {
 
 
                     Log.d(TAG, "Successfull Response" + body);
-                    try {
-                        ForeCast foreCast = new ForeCast(body);
-                        layoutManager = new LinearLayoutManager(getActivity());
-                        recyclerView.setLayoutManager(layoutManager);
-                        adapter = new CheckWeatherRecylerViewAdapter(foreCast);
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                ForeCast foreCast = null;
+                                try {
+                                    foreCast = new ForeCast(body);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                layoutManager = new LinearLayoutManager(getActivity());
+                                recyclerView.setLayoutManager(layoutManager);
+                                adapter = new CheckWeatherRecylerViewAdapter(foreCast.foreCastArrayList);
+                                recyclerView.setAdapter(adapter);
+                            }
+                        });
+
+
+
+
                 }else{
                     Log.d(TAG, "Fail Response" + body);
                 }

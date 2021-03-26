@@ -12,4 +12,11 @@
     <string name="StringCloudlness">Cloudlness</string>
     <string name="APIKEY">2fdf85c5ae5e6f467181fae0ef5aa332</string>
     <string name="StringCheckForcast">Check Forecast</string>
+    <string name="StringF"> F</string>
+    <string name="StringPercentage"> %</string>
+    <string name="StringSpeed"> miles/hr</string>
+    <string name="StringDegrees"> degrees</string>
+    <string name="StringMax"> Max:</string>
+    <string name="StringMin"> Min: </string>
+
 </resources>
