@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WeatheForeCast</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="StringTemperature">Temperature</string>
+    <string name="StringTempMax">Temperature Max</string>
+    <string name="StringTempMin">Temperature Min</string>
+    <string name="StringDescription">Description</string>
+    <string name="StringHumidity">Humidity</string>
+    <string name="StringWindSpeed">Wind Speed</string>
+    <string name="StringWindDegree">Wind Degree</string>
+    <string name="StringCloudlness">Cloudlness</string>
+    <string name="APIKEY">2fdf85c5ae5e6f467181fae0ef5aa332</string>
+</resources>
